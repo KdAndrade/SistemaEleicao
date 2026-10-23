@@ -110,12 +110,21 @@ git log --oneline
 git status
 ```
 
-A publicação ainda depende da criação de um repositório público no GitHub. Crie um repositório vazio, sem README, licença ou `.gitignore` automáticos. Depois, na pasta local do projeto, substitua o endereço abaixo pela URL real do repositório:
+Repositório: [KdAndrade/SistemaEleicao](https://github.com/KdAndrade/SistemaEleicao).
+
+Para obter uma cópia em outro computador:
 
 ```sh
-git remote add origin https://github.com/SEU_USUARIO/SistemaEleicao.git
-git branch -M main
-git push -u origin main
+git clone https://github.com/KdAndrade/SistemaEleicao.git
+cd SistemaEleicao
 ```
 
-Depois do envio, confira se o repositório está público e se o código, os testes, o README e o histórico de commits aparecem no GitHub.
+Para enviar novos commits da branch `main`:
+
+```sh
+git push origin main
+```
+
+## Licença
+
+Este projeto utiliza a licença MIT, disponível no arquivo `LICENSE`.
