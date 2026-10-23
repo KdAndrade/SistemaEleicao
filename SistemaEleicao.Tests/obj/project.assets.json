@@ -393,6 +393,16 @@
         "build": {
           "build/net8.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "SistemaEleicao.Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/SistemaEleicao.Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaEleicao.Console.dll": {}
+        }
       }
     }
   },
@@ -903,11 +913,17 @@
         "xunit.runner.visualstudio.3.1.4.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "SistemaEleicao.Console/1.0.0": {
+      "type": "project",
+      "path": "../SistemaEleicao.Console/SistemaEleicao.Console.csproj",
+      "msbuildProject": "../SistemaEleicao.Console/SistemaEleicao.Console.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.NET.Test.Sdk >= 17.14.1",
+      "SistemaEleicao.Console >= 1.0.0",
       "coverlet.collector >= 6.0.4",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 3.1.4"
@@ -938,7 +954,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Kauan\\OneDrive\\Documentos\\5 - Exercicios.Qualidade\\SistemaEleicao\\SistemaEleicao.Console\\SistemaEleicao.Console.csproj": {
+              "projectPath": "C:\\Users\\Kauan\\OneDrive\\Documentos\\5 - Exercicios.Qualidade\\SistemaEleicao\\SistemaEleicao.Console\\SistemaEleicao.Console.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
