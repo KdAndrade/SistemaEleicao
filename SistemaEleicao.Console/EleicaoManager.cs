@@ -52,4 +52,41 @@ public class EleicaoManager
         return eleitores.AsReadOnly();
     }
 
+    public int VotosBrancos { get; private set; }
+    public int VotosNulos { get; private set; }
+
+    public void Votar(string documento, int? numeroCandidato)
+    {
+        Eleitor? eleitor = eleitores.SingleOrDefault(e => e.Documento == documento);
+
+        if (eleitor is null)
+        {
+            throw new InvalidOperationException("Eleitor não cadastrado.");
+        }
+
+        if (eleitor.JaVotou)
+        {
+            throw new InvalidOperationException("Este eleitor já votou.");
+        }
+
+        if (numeroCandidato is null)
+        {
+            VotosBrancos++;
+        }
+        else
+        {
+            Candidato? candidato = candidatos.SingleOrDefault(c => c.Numero == numeroCandidato);
+
+            if (candidato is null)
+            {
+                VotosNulos++;
+            }
+            else
+            {
+                candidato.AdicionarVoto();
+            }
+        }
+
+        eleitor.RegistrarVoto();
+    }
 }
