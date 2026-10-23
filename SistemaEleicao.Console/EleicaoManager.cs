@@ -29,4 +29,27 @@ public class EleicaoManager
     {
         return candidatos.AsReadOnly();
     }
+
+    private readonly List<Eleitor> eleitores = new();
+
+    public void CadastrarEleitor(string documento)
+    {
+        bool eleitorExiste = eleitores.Any(e => e.Documento == documento);
+
+        if (eleitorExiste)
+        {
+            throw new InvalidOperationException(
+                "Já existe um eleitor com esse documento."
+            );
+        }
+
+        Eleitor eleitor = new Eleitor(documento);
+        eleitores.Add(eleitor);
+    }
+
+    public IReadOnlyList<Eleitor> ListarEleitores()
+    {
+        return eleitores.AsReadOnly();
+    }
+
 }
