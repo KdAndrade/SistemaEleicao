@@ -89,4 +89,9 @@ public class EleicaoManager
 
         eleitor.RegistrarVoto();
     }
+
+    public ResultadoEleicao ApurarVotos()
+    {
+        return new ResultadoEleicao(candidatos, VotosBrancos, VotosNulos);
+    }
 }
