@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace SistemaEleicao.Console;
 
 public class EleicaoManager
 {
     private readonly List<Candidato> candidatos = new();
+    private readonly List<Eleitor> eleitores = new();
+
+    public int VotosBrancos { get; private set; }
+    public int VotosNulos { get; private set; }
 
     public void CadastrarCandidato(string nome, int numero)
     {
@@ -20,7 +19,7 @@ public class EleicaoManager
             );
         }
 
-        Candidato candidato = new Candidato(nome, numero);
+        Candidato candidato = new(nome, numero);
 
         candidatos.Add(candidato);
     }
@@ -29,8 +28,6 @@ public class EleicaoManager
     {
         return candidatos.AsReadOnly();
     }
-
-    private readonly List<Eleitor> eleitores = new();
 
     public void CadastrarEleitor(string documento)
     {
@@ -43,7 +40,7 @@ public class EleicaoManager
             );
         }
 
-        Eleitor eleitor = new Eleitor(documento);
+        Eleitor eleitor = new(documento);
         eleitores.Add(eleitor);
     }
 
@@ -51,9 +48,6 @@ public class EleicaoManager
     {
         return eleitores.AsReadOnly();
     }
-
-    public int VotosBrancos { get; private set; }
-    public int VotosNulos { get; private set; }
 
     public void Votar(string documento, int? numeroCandidato)
     {
