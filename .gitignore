@@ -1,0 +1,9 @@
+# Arquivos gerados pelo .NET
+**/bin/
+**/obj/
+**/TestResults/
+
+# Configurações locais de IDE
+.vs/
+*.user
+*.suo
